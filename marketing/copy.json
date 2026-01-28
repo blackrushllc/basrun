@@ -1,0 +1,192 @@
+{
+  "hero": {
+    "headline": "Run your code, not your servers.",
+    "subhead": "BASRUN is the dedicated cloud runtime for Basil. Deploy scheduled jobs, webhooks, and REST APIs in seconds with zero infrastructure overhead.",
+    "bullets": [
+      "Reliable Scheduled Jobs (Cron)",
+      "Instant Webhook Handlers",
+      "Production-Ready REST APIs"
+    ],
+    "primary_cta": "Get started free",
+    "secondary_cta": "Read the docs",
+    "snippet": {
+      "title": "Health Check (main.basil)",
+      "code": "See marketing/main.basil for an example health check snippet."
+    }
+  },
+  "how_it_works": [
+    {
+      "step": 1,
+      "title": "Package & Upload",
+      "description": "Upload a single .basil file, a ZIP package with your libraries, or connect your GitHub repository (coming soon)."
+    },
+    {
+      "step": 2,
+      "title": "Configure Run Mode",
+      "description": "Choose between Cron schedules, Webhook triggers, or REST endpoints. Set your environment variables and secrets in the dashboard."
+    },
+    {
+      "step": 3,
+      "title": "Observe, Iterate, and Deploy",
+      "description": "Watch real-time logs, track token usage, and iterate in a safe sandbox before promoting to production."
+    }
+  ],
+  "use_cases": [
+    {
+      "title": "Daily S3 Ingest",
+      "description": "Automatically process new files from S3 every morning at 5AM UTC without managing a single server."
+    },
+    {
+      "title": "5-Minute Health Check",
+      "description": "Monitor critical endpoints around the clock and trigger alerts the moment something goes wrong."
+    },
+    {
+      "title": "Stripe Webhook Handler",
+      "description": "Securely process payment events and synchronize your database in real-time."
+    },
+    {
+      "title": "Inventory Sync",
+      "description": "Keep your e-commerce platform and warehouse in sync with lightweight, scheduled Basil scripts."
+    },
+    {
+      "title": "Lightweight REST API",
+      "description": "Build and expose functional endpoints for your mobile or web apps without the boilerplate."
+    },
+    {
+      "title": "Scheduled Report Generator",
+      "description": "Aggregate weekly performance data and distribute reports to your team via email or Slack."
+    }
+  ],
+  "modes": {
+    "scheduled": {
+      "title": "Scheduled Jobs (Cron)",
+      "description": "Run your logic on a recurring schedule with precision timing.",
+      "example": "Run a cleanup script every Sunday at midnight: 0 0 * * 0",
+      "mapping": "cron('0 0 * * 0') → main.basil"
+    },
+    "webhook": {
+      "title": "Webhooks (GET/POST)",
+      "description": "Trigger packages via external HTTP events from Stripe, GitHub, or your own apps.",
+      "example": "Process a incoming POST from a payment provider.",
+      "mapping": "POST /hooks/stripe → webhook.basil"
+    },
+    "rest_api": {
+      "title": "REST APIs",
+      "description": "Expose your Basil packages as fully-functional REST endpoints.",
+      "example": "Fetch user data via a simple GET request.",
+      "mapping": "GET /status/123 → STATUS(123)"
+    }
+  },
+  "dashboard": {
+    "title": "Complete Visibility",
+    "description": "A developer-first dashboard designed for monitoring and iteration.",
+    "features": [
+      "Package management and versioning",
+      "Real-time execution logs and audit trails",
+      "Next run countdowns for scheduled jobs",
+      "Token usage and error rate analytics",
+      "Interactive sandbox for testing snippets"
+    ]
+  },
+  "trust": {
+    "title": "Safe, Secure, and Scalable",
+    "features": [
+      {
+        "title": "Sandboxed Runtime",
+        "description": "Every execution happens in an isolated container for maximum security."
+      },
+      {
+        "title": "Secrets Management",
+        "description": "Inject API keys and database credentials safely via environment variables."
+      },
+      {
+        "title": "Rate Limiting",
+        "description": "Protect your endpoints with built-in, configurable rate limits."
+      },
+      {
+        "title": "Audit Trails",
+        "description": "Comprehensive logs of every run, change, and deployment."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "tiers": [
+      {
+        "name": "Free Tier",
+        "description": "Perfect for hobbyists and small scripts."
+      },
+      {
+        "name": "Trial Tier",
+        "description": "Experience the full power of BASRUN for 14 days."
+      },
+      {
+        "name": "Production Usage",
+        "description": "Token-based pricing—pay only for what you use."
+      }
+    ]
+  },
+  "final_cta": {
+    "headline": "Ready to run Basil in the cloud?",
+    "subhead": "Join hundreds of developers building faster with BASRUN.",
+    "button": "Register Now"
+  },
+  "microcopy": {
+    "nav": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "docs": "Documentation",
+      "login": "Login",
+      "register": "Sign Up"
+    },
+    "buttons": {
+      "primary": "Get started free",
+      "secondary": "Read the docs",
+      "submit": "Deploy Package",
+      "cancel": "Cancel"
+    },
+    "forms": {
+      "register": {
+        "email_label": "Work Email",
+        "email_placeholder": "you@company.com",
+        "password_label": "Password",
+        "password_placeholder": "Min. 8 characters",
+        "helper": "By signing up, you agree to our Terms of Service."
+      }
+    },
+    "dashboard": {
+      "table_headers": [
+        "Package Name",
+        "Mode",
+        "Last Run",
+        "Status",
+        "Usage"
+      ],
+      "empty_state": "No packages deployed yet. Upload your first Basil script to get started.",
+      "modal_labels": {
+        "upload": "Upload Package",
+        "config": "Configure Triggers",
+        "secrets": "Manage Secrets"
+      }
+    }
+  },
+  "seo": {
+    "title": "BASRUN | The Serverless Runtime for Basil Packages",
+    "meta_description": "Deploy Basil scripts as scheduled jobs, webhooks, or REST APIs. Sandboxed, secure, and developer-friendly serverless execution.",
+    "og_title": "BASRUN: Serverless Basil Made Simple",
+    "og_description": "Run your Basil code in the cloud. No servers, no hassle. Schedule tasks or build APIs in minutes."
+  },
+  "elevator_pitch": "BASRUN is a serverless cloud runtime that turns Basil scripts into scheduled jobs, webhooks, and REST APIs with zero infrastructure management and built-in security.",
+  "taglines": [
+    "Basil in the cloud. Done.",
+    "Serverless Basil, simplified.",
+    "Your code, our cloud, zero friction."
+  ],
+  "headlines": [
+    "Run Basil packages anywhere, instantly.",
+    "The simplest way to deploy scheduled jobs and webhooks.",
+    "Turn your scripts into production services in seconds.",
+    "Serverless execution for the modern developer.",
+    "Focus on your code. We'll handle the runtime."
+  ]
+}

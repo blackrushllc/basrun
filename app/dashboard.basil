@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard â€” BASRUN (Mock)</title>
+  <meta name="description" content="BASRUN dashboard mock: packages, logs, settings, billing, and a create package modal (UI-only)." />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <script defer src="../assets/site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-open="false">
+  <div class="container nav-inner">
+    <a class="brand" href="../index.basil" aria-label="BASRUN home">
+      <img class="brand-mark" src="../assets/logo.svg" alt="" aria-hidden="true" />
+      <span class="brand-text">BASRUN</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <div id="navLinks" class="nav-links">
+        <a href="../index.basil">Home</a>
+        <a href="../docs/index.basil">Docs</a>
+        <a href="../faq.basil">FAQ</a>
+        <a href="../pricing.basil">Pricing</a>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme"></button>
+      <a class="btn btn-secondary" href="../login.basil">Login</a>
+      <a class="btn btn-primary" href="../register.basil">Register</a>
+      <button id="navToggle" class="icon-btn nav-toggle" type="button" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <div class="container">
+    <div class="callout" style="margin-bottom: 14px;">
+      <strong>Demo only:</strong> This dashboard is a visual mock â€” no backend is connected.
+    </div>
+
+    <div class="app-shell">
+      <aside class="app-sidebar" aria-label="Dashboard navigation">
+        <a href="dashboard.basil" aria-current="page"><span>Packages</span><span class="badge">3</span></a>
+        <a href="#" data-demo-toast="Logs are not available in the UI mock."><span>Logs</span><span class="kbd">demo</span></a>
+        <a href="#" data-demo-toast="Settings are not available in the UI mock."><span>Settings</span><span class="kbd">demo</span></a>
+        <a href="#" data-demo-toast="Billing is not available in the UI mock."><span>Billing</span><span class="kbd">demo</span></a>
+      </aside>
+
+      <section class="app-main" aria-label="Packages">
+        <header>
+          <div>
+            <strong>Packages</strong>
+            <div class="help">Preview package status, schedules, and token usage.</div>
+          </div>
+          <div class="hero-actions" style="margin-top: 0;">
+            <button class="btn btn-primary" type="button" data-modal-open>Create package</button>
+          </div>
+        </header>
+
+        <div class="content">
+          <table aria-label="Packages table">
+            <thead>
+            <tr>
+              <th>Package</th>
+              <th>Mode</th>
+              <th>Status</th>
+              <th>Last run</th>
+              <th>Next run</th>
+              <th>Errors</th>
+              <th>Tokens</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><strong class="text">health-check</strong><div class="help">Checks an endpoint every 5 minutes</div></td>
+              <td>Scheduled</td>
+              <td><span class="badge badge-success">OK</span></td>
+              <td>2m ago</td>
+              <td>in 3m</td>
+              <td>0%</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td><strong class="text">stripe-webhook</strong><div class="help">Receives payment events</div></td>
+              <td>Webhook</td>
+              <td><span class="badge badge-warning">Warn</span></td>
+              <td>12m ago</td>
+              <td>â€”</td>
+              <td>1.2%</td>
+              <td>98</td>
+            </tr>
+            <tr>
+              <td><strong class="text">tiny-rest</strong><div class="help">Small internal API</div></td>
+              <td>REST</td>
+              <td><span class="badge">Idle</span></td>
+              <td>â€”</td>
+              <td>â€”</td>
+              <td>0%</td>
+              <td>0</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<div id="modalBackdrop" class="backdrop" aria-hidden="true">
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header>
+      <strong id="modalTitle">Create package</strong>
+      <button class="icon-btn" type="button" data-modal-close aria-label="Close dialog">Ã—</button>
+    </header>
+    <div class="modal-body">
+      <form class="form">
+        <label>
+          Source
+          <select>
+            <option>Upload</option>
+            <option>GitHub (planned)</option>
+          </select>
+        </label>
+
+        <div class="form-row">
+          <label>
+            Mode
+            <select id="pkgMode">
+              <option value="scheduled">Scheduled</option>
+              <option value="webhook">Webhook</option>
+              <option value="rest">REST</option>
+            </select>
+          </label>
+          <label>
+            Entry point
+            <input id="entryPoint" type="text" placeholder="main.basil" />
+            <div class="help">Suggested: <span class="kbd">main.basil</span> / <span class="kbd">webhook.basil</span> / <span class="kbd">api.basil</span></div>
+          </label>
+        </div>
+
+        <label>
+          Package name
+          <input type="text" placeholder="my-package" />
+        </label>
+      </form>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" type="button" data-modal-close>Cancel</button>
+      <button class="btn btn-primary" type="button" data-demo-toast="Package creation is not available in the UI mock.">Save</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-links" aria-label="Footer links">
+      <a href="../docs/index.basil">Docs</a>
+      <a href="../faq.basil">FAQ</a>
+      <a href="../pricing.basil">Pricing</a>
+      <a href="../terms.basil">Terms</a>
+      <a href="../privacy.basil">Privacy</a>
+      <a href="../status.basil">Status</a>
+    </div>
+    <div class="footer-meta">Â© 2026 BASRUN.COM</div>
+  </div>
+</footer>
+</body>
+</html>
+
+<?basil let a=1; ?>

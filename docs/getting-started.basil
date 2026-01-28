@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Getting Started â€” BASRUN Docs</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <script defer src="../assets/site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-open="false">
+  <div class="container nav-inner">
+    <a class="brand" href="../index.basil" aria-label="BASRUN home">
+      <img class="brand-mark" src="../assets/logo.svg" alt="" aria-hidden="true" />
+      <span class="brand-text">BASRUN</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <div id="navLinks" class="nav-links">
+        <a href="../index.basil">Home</a>
+        <a href="index.basil" aria-current="page">Docs</a>
+        <a href="../faq.basil">FAQ</a>
+        <a href="../pricing.basil">Pricing</a>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme"></button>
+      <a class="btn btn-secondary" href="../login.basil">Login</a>
+      <a class="btn btn-primary" href="../register.basil">Register</a>
+      <button id="navToggle" class="icon-btn nav-toggle" type="button" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <div class="container docs-layout">
+    <aside class="sidebar" aria-label="Docs navigation">
+      <a href="index.basil">Docs overview</a>
+      <a href="getting-started.basil">Getting started</a>
+      <a href="packages.basil">Packages & modes</a>
+      <a href="deployment.basil">Deployment</a>
+      <a href="scheduling.basil">Scheduling</a>
+      <a href="webhooks.basil">Webhooks</a>
+      <a href="rest-api.basil">REST APIs</a>
+      <a href="secrets.basil">Secrets</a>
+      <a href="logging.basil">Logging</a>
+    </aside>
+
+    <article class="card doc-content prose">
+      <div class="kicker">Getting started</div>
+      <h1>Deploy your first package</h1>
+      <p class="lead">A minimal path to â€œhello worldâ€ on BASRUN (static placeholder).</p>
+
+      <h2>1) Write a Basil file</h2>
+      <div class="codeblock" style="margin-top: 10px;">
+        <header><span>main.basil</span><span class="kbd">scheduled</span></header>
+        <pre><code>fn run():
+  log.info("Hello from BASRUN")
+  return 0</code></pre>
+      </div>
+
+      <h2>2) Create a package</h2>
+      <ul>
+        <li>Upload `main.basil` (or a ZIP)</li>
+        <li>Select a mode: Scheduled / Webhook / REST</li>
+        <li>Choose the entry point (for example `main.basil`)</li>
+      </ul>
+
+      <h2>3) Run it</h2>
+      <p>In scheduled mode you configure a cron expression. In webhook mode you call the generated URL. In REST mode you call endpoints under a base path.</p>
+
+      <div class="callout" style="margin-top: 14px;">
+        <strong>Tip:</strong> Use the <a href="../app/dashboard.basil">dashboard mock</a> to preview the intended flow.
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-links" aria-label="Footer links">
+      <a href="index.basil">Docs</a>
+      <a href="../faq.basil">FAQ</a>
+      <a href="../pricing.basil">Pricing</a>
+      <a href="../terms.basil">Terms</a>
+      <a href="../privacy.basil">Privacy</a>
+      <a href="../status.basil">Status</a>
+    </div>
+    <div class="footer-meta">Â© 2026 BASRUN.COM</div>
+  </div>
+</footer>
+</body>
+</html>
+
+<?basil let a=1; ?>

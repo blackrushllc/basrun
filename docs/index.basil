@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Docs â€” BASRUN</title>
+  <meta name="description" content="BASRUN docs (static placeholders): Getting Started, Packages, Scheduling, Webhooks, REST APIs, Secrets, Logging." />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <script defer src="../assets/site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-open="false">
+  <div class="container nav-inner">
+    <a class="brand" href="../index.basil" aria-label="BASRUN home">
+      <img class="brand-mark" src="../assets/logo.svg" alt="" aria-hidden="true" />
+      <span class="brand-text">BASRUN</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <div id="navLinks" class="nav-links">
+        <a href="../index.basil">Home</a>
+        <a href="index.basil" aria-current="page">Docs</a>
+        <a href="../faq.basil">FAQ</a>
+        <a href="../pricing.basil">Pricing</a>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme"></button>
+      <a class="btn btn-secondary" href="../login.basil">Login</a>
+      <a class="btn btn-primary" href="../register.basil">Register</a>
+      <button id="navToggle" class="icon-btn nav-toggle" type="button" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <div class="container docs-layout">
+    <aside class="sidebar" aria-label="Docs navigation">
+      <a href="index.basil">Docs overview</a>
+      <a href="getting-started.basil">Getting started</a>
+      <a href="packages.basil">Packages & modes</a>
+      <a href="deployment.basil">Deployment</a>
+      <a href="scheduling.basil">Scheduling</a>
+      <a href="webhooks.basil">Webhooks</a>
+      <a href="rest-api.basil">REST APIs</a>
+      <a href="secrets.basil">Secrets</a>
+      <a href="logging.basil">Logging</a>
+    </aside>
+
+    <article class="card doc-content prose">
+      <div class="kicker">Docs</div>
+      <h1>BASRUN documentation (placeholders)</h1>
+      <p class="lead">These pages outline the intended shape of the BASRUN developer experience.</p>
+
+      <h2>Start here</h2>
+      <ul>
+        <li><a href="getting-started.basil">Getting started</a> â€” deploy your first package</li>
+        <li><a href="packages.basil">Packages & modes</a> â€” how BASRUN executes code</li>
+        <li><a href="deployment.basil">Deployment</a> â€” upload vs GitHub (planned)</li>
+      </ul>
+
+      <h2>Core topics</h2>
+      <ul>
+        <li><a href="scheduling.basil">Scheduling</a> â€” cron jobs, timing, and run history</li>
+        <li><a href="webhooks.basil">Webhooks</a> â€” HTTP triggers and request/response</li>
+        <li><a href="rest-api.basil">REST APIs</a> â€” route multiple endpoints</li>
+        <li><a href="secrets.basil">Secrets</a> â€” environment variables and vault</li>
+        <li><a href="logging.basil">Logging</a> â€” logs, errors, and basic observability</li>
+      </ul>
+
+      <div class="callout" style="margin-top: 14px;">
+        <strong>Note:</strong> BASRUN is presented here as a concept UI. Replace placeholders with real runtime docs when available.
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-links" aria-label="Footer links">
+      <a href="index.basil" aria-current="page">Docs</a>
+      <a href="../faq.basil">FAQ</a>
+      <a href="../pricing.basil">Pricing</a>
+      <a href="../terms.basil">Terms</a>
+      <a href="../privacy.basil">Privacy</a>
+      <a href="../status.basil">Status</a>
+    </div>
+    <div class="footer-meta">Â© 2026 BASRUN.COM</div>
+  </div>
+</footer>
+</body>
+</html>
+
+<?basil let a=1; ?>

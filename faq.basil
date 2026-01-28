@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ â€” BASRUN</title>
+  <meta name="description" content="Frequently asked questions about BASRUN: packages, modes, scheduling, webhooks, REST APIs, secrets, logs, and pricing tokens." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-open="false">
+  <div class="container nav-inner">
+    <a class="brand" href="index.basil" aria-label="BASRUN home">
+      <img class="brand-mark" src="assets/logo.svg" alt="" aria-hidden="true" />
+      <span class="brand-text">BASRUN</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <div id="navLinks" class="nav-links">
+        <a href="index.basil">Home</a>
+        <a href="docs/index.basil">Docs</a>
+        <a href="faq.basil" aria-current="page">FAQ</a>
+        <a href="pricing.basil">Pricing</a>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme"></button>
+      <a class="btn btn-secondary" href="login.basil">Login</a>
+      <a class="btn btn-primary" href="register.basil">Register</a>
+      <button id="navToggle" class="icon-btn nav-toggle" type="button" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="container">
+      <div class="kicker">FAQ</div>
+      <h1>Questions developers ask about BASRUN</h1>
+      <p class="lead" style="margin-top: 10px;">This is a static mock site. Answers describe intended product behavior.</p>
+
+      <div class="faq-list" style="margin-top: 18px;">
+        <details class="card faq-item" open>
+          <summary>What is BASRUN?</summary>
+          <div class="faq-body">BASRUN is a hosted runtime concept for running Basil packages in the cloud via schedules (cron), webhooks (HTTP triggers), or REST-style routing.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>What is a Basil package?</summary>
+          <div class="faq-body">A Basil package is the deployable unit â€” a single `.basil` file or a ZIP containing multiple files and assets â€” plus configuration like mode and entry point.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>Can I deploy a single file or do I need a ZIP?</summary>
+          <div class="faq-body">Both are intended. Single-file deployments are great for small jobs. ZIP packages are better when you have multiple modules, templates, or static assets.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>Does scheduling support cron expressions and timezones?</summary>
+          <div class="faq-body">Cron expressions are the core model. Timezone support is expected; exact behavior may vary by plan and is subject to change.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>How do webhooks map to functions?</summary>
+          <div class="faq-body">In webhook mode, an HTTP request triggers a configured entry point function (for example, `webhook.basil`). BASRUN passes the request method, path, headers, and body.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>How does REST routing work?</summary>
+          <div class="faq-body">In REST mode, a router entry point handles multiple paths under a base URL (for example, `/api/your-pkg/*`). You can implement simple routing in Basil, or use a helper library when available.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>What are the sandboxing and resource limits?</summary>
+          <div class="faq-body">BASRUN is intended to run packages in an isolated sandbox with CPU/memory/time limits. Exact limits depend on the plan and may change over time.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>How are secrets handled?</summary>
+          <div class="faq-body">Secrets are expected to be stored encrypted and injected into the runtime as environment variables or scoped secret values. Never hardcode secrets in source.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>Will BASRUN support GitHub deployments?</summary>
+          <div class="faq-body">GitHub-based deployment is a common workflow (link repo â†’ pick path/branch â†’ deploy). This UI mock references it as a planned option.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>Is there an approval process for public endpoints?</summary>
+          <div class="faq-body">Some platforms require additional checks for public webhooks or higher quotas. BASRUN may include plan-based approvals to reduce abuse and improve reliability.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>What are the Free tier limits?</summary>
+          <div class="faq-body">The Free tier is intended for learning and light usage (limited runs, lower resource caps). Limits are subject to change as the product evolves.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>How does pricing work (tokens)?</summary>
+          <div class="faq-body">Usage is measured in tokens (a simplified unit representing compute + I/O). You can buy token bundles or use pay-as-you-go depending on the plan.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>What logs and observability are available?</summary>
+          <div class="faq-body">Per-run logs, recent history, basic metrics (error rate, last/next run), and token usage are intended. Deeper tracing can be added later.</div>
+        </details>
+
+        <details class="card faq-item">
+          <summary>How can I get support?</summary>
+          <div class="faq-body">During the preview phase, support is provided via the community forums and GitHub discussions. Priority support for production users is planned.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-links" aria-label="Footer links">
+      <a href="docs/index.basil">Docs</a>
+      <a href="faq.basil" aria-current="page">FAQ</a>
+      <a href="pricing.basil">Pricing</a>
+      <a href="terms.basil">Terms</a>
+      <a href="privacy.basil">Privacy</a>
+      <a href="status.basil">Status</a>
+    </div>
+    <div class="footer-meta">Â© 2026 BASRUN.COM</div>
+  </div>
+</footer>
+</body>
+</html>
+
+<?basil let a=1; ?>

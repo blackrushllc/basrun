@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing â€” BASRUN</title>
+  <meta name="description" content="Pricing for BASRUN: Free, Trial, and Production Tokens. Compare features and understand token-based usage." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-open="false">
+  <div class="container nav-inner">
+    <a class="brand" href="index.basil" aria-label="BASRUN home">
+      <img class="brand-mark" src="assets/logo.svg" alt="" aria-hidden="true" />
+      <span class="brand-text">BASRUN</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <div id="navLinks" class="nav-links">
+        <a href="index.basil">Home</a>
+        <a href="docs/index.basil">Docs</a>
+        <a href="faq.basil">FAQ</a>
+        <a href="pricing.basil" aria-current="page">Pricing</a>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme"></button>
+      <a class="btn btn-secondary" href="login.basil">Login</a>
+      <a class="btn btn-primary" href="register.basil">Register</a>
+      <button id="navToggle" class="icon-btn nav-toggle" type="button" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false"></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="container">
+      <div class="kicker">Pricing</div>
+      <h1>Start small. Scale with tokens.</h1>
+      <p class="lead" style="margin-top: 10px;">All plans are subject to change as BASRUN evolves. This is a static mock UI.</p>
+
+      <div class="grid grid-3" style="margin-top: 18px;">
+        <div class="card card-pad">
+          <div class="badge">Free</div>
+          <h3 style="margin-top: 10px;">$0</h3>
+          <p style="margin-top: 10px;">Sandboxed runtime + limited runs for learning and experiments.</p>
+          <ul class="prose" style="margin-top: 12px;">
+            <li>Limited scheduled runs</li>
+            <li>Basic logs</li>
+            <li>Community support</li>
+          </ul>
+          <div class="hero-actions" style="margin-top: 14px;">
+            <a class="btn btn-primary" href="register.basil">Create free account</a>
+          </div>
+        </div>
+        <div class="card card-pad">
+          <div class="badge">Trial</div>
+          <h3 style="margin-top: 10px;">Time-limited</h3>
+          <p style="margin-top: 10px;">Try production-oriented features for a limited period.</p>
+          <ul class="prose" style="margin-top: 12px;">
+            <li>Higher limits</li>
+            <li>Secrets vault</li>
+            <li>Webhook + REST modes</li>
+          </ul>
+          <div class="hero-actions" style="margin-top: 14px;">
+            <a class="btn btn-secondary" href="register.basil">Start trial (demo)</a>
+          </div>
+        </div>
+        <div class="card card-pad">
+          <div class="badge">Production</div>
+          <h3 style="margin-top: 10px;">Tokens</h3>
+          <p style="margin-top: 10px;">Pay-as-you-go usage. Tokens represent compute + I/O in a simple unit.</p>
+          <ul class="prose" style="margin-top: 12px;">
+            <li>Best-effort reliability</li>
+            <li>Rate limiting</li>
+            <li>Usage dashboards</li>
+          </ul>
+          <div class="hero-actions" style="margin-top: 14px;">
+            <a class="btn btn-primary" href="register.basil">Get production access</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 18px;">
+        <div class="card-pad">
+          <h2>Compare features</h2>
+          <p class="lead" style="margin-top: 10px;">A simple, static comparison table.</p>
+        </div>
+        <div class="card-pad" style="padding-top: 0;">
+          <table aria-label="Compare pricing features">
+            <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Free</th>
+              <th>Trial</th>
+              <th>Production</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><strong class="text">Scheduled jobs</strong></td>
+              <td>Limited</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td><strong class="text">Webhooks</strong></td>
+              <td>Limited</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td><strong class="text">REST routing</strong></td>
+              <td>â€”</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td><strong class="text">Secrets vault</strong></td>
+              <td>â€”</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td><strong class="text">Logs & run history</strong></td>
+              <td>Basic</td>
+              <td>Expanded</td>
+              <td>Expanded</td>
+            </tr>
+            <tr>
+              <td><strong class="text">Token usage dashboard</strong></td>
+              <td>Basic</td>
+              <td>Included</td>
+              <td>Included</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card card-pad" style="margin-top: 18px;">
+        <h2>Pricing FAQ</h2>
+        <div class="faq-list" style="margin-top: 12px;">
+          <details class="card faq-item">
+            <summary>What are tokens?</summary>
+            <div class="faq-body">Tokens are a simplified unit representing runtime cost (compute + I/O). This mock uses tokens as a placeholder pricing model.</div>
+          </details>
+          <details class="card faq-item">
+            <summary>Can free limits change?</summary>
+            <div class="faq-body">Yes. Free tier limits are explicitly â€œsubject to changeâ€ as the platform matures.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-links" aria-label="Footer links">
+      <a href="docs/index.basil">Docs</a>
+      <a href="faq.basil">FAQ</a>
+      <a href="pricing.basil" aria-current="page">Pricing</a>
+      <a href="terms.basil">Terms</a>
+      <a href="privacy.basil">Privacy</a>
+      <a href="status.basil">Status</a>
+    </div>
+    <div class="footer-meta">Â© 2026 BASRUN.COM</div>
+  </div>
+</footer>
+</body>
+</html>
+
+<?basil let a=1; ?>
