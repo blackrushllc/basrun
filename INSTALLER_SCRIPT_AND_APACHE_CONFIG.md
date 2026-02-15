@@ -25,21 +25,30 @@ drwxr-xr-x 86 root root     4096 Jul 12  2025 ../
 -rwxr-xr-x  1 root root 35932640 Feb 15 16:20 basil.cgi*
 -rwxr-xr-x  1 root root 50959272 Feb 15 16:17 basilc*
 
+
+sudo a2enmod cgi     # or cgid if using threaded MPM (most Ubuntu setups use prefork ? cgi)
+sudo a2enmod actions
+sudo systemctl restart apache2
+
+
 vhost for basil scripting:
 
-<VirtualHost *:80>
-ServerName basrun.com
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+    ServerName ai.teleemc.com
+LogLevel debug
+
 
     # Where your site lives
-    DocumentRoot /var/www/basrun
+    DocumentRoot /var/www/website
 
-    <Directory "/var/www/basrun">
+    <Directory "/var/www/website">
         Options +ExecCGI +FollowSymLinks
         AllowOverride None
         Require all granted
 
         # "/" -> /var/www/brb/cgi/index.basil
-        DirectoryIndex cgi/index.basil
+        DirectoryIndex index.basil
 
         # Allow extra path segments after scripts (PATH_INFO)
         AcceptPathInfo On
@@ -53,11 +62,16 @@ ServerName basrun.com
 
     # Classic CGI dir (for basil.cgi)
     ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+
     <Directory "/usr/lib/cgi-bin/">
-        Options +ExecCGI
-        AllowOverride None
-        Require all granted
+       Options +ExecCGI
+       AllowOverride None
+       Require all granted
+       AcceptPathInfo On
+       # Explicitly force CGI execution for anything in this dir
+       SetHandler cgi-script
     </Directory>
+
 
     # Basil handler: any .basil file is run through basil.cgi
     AddHandler basil-script .basil
@@ -67,7 +81,13 @@ ServerName basrun.com
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 
+
+SSLCertificateFile /etc/letsencrypt/live/ai.teleemc.com/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/ai.teleemc.com/privkey.pem
+Include /etc/letsencrypt/options-ssl-apache.conf
 </VirtualHost>
+</IfModule>
+
 
 
 
@@ -76,7 +96,7 @@ or
 
 
 <VirtualHost *:80>
-ServerName blackrushbasic.com
+    ServerName blackrushbasic.com
 
     # Where your site lives
     DocumentRoot /var/www/brb
@@ -128,36 +148,37 @@ ServerName blackrushbasic.com
 
 downloads
 +---dist
-+---linux
-¦       basilc
-¦       basilc-bmx
-¦       basilc-daw
-¦       basilc-naked
-¦       bcc
-¦       bcc-bmx
-¦       bcc-daw
-¦       bcc-naked
-¦       basilc-safe
-¦
-+---mac
-¦       basilc
-¦       basilc-bmx
-¦       basilc-daw
-¦       basilc-naked
-¦       bcc
-¦       bcc-bmx
-¦       bcc-daw
-¦       bcc-naked
-¦
-+---windows
-        basil-serve.exe
-        Basil.msi
-        basilc-bmx.exe
-        basilc-daw.exe
-        basilc-naked.exe
-        basilc.exe
-        bcc-bmx.exe
-        bcc-daw.exe
-        bcc-naked.exe
-        bcc.exe
+		+---linux
+		¦       basilc
+		¦       basilc-bmx
+		¦       basilc-daw
+		¦       basilc-naked
+		¦       bcc
+		¦       bcc-bmx
+		¦       bcc-daw
+		¦       bcc-naked
+		¦       basilc-safe
+		¦
+		+---mac
+		¦       basilc
+		¦       basilc-bmx
+		¦       basilc-daw
+		¦       basilc-naked
+		¦       bcc
+		¦       bcc-bmx
+		¦       bcc-daw
+		¦       bcc-naked
+		¦
+		+---windows
+				basil-serve.exe
+				Basil.msi
+				basilc-bmx.exe
+				basilc-daw.exe
+				basilc-naked.exe
+				basilc.exe
+				bcc-bmx.exe
+				bcc-daw.exe
+				bcc-naked.exe
+				bcc.exe
+
 ```
